@@ -1,11 +1,15 @@
-<h1>My List</h1>
+<div class="banner">
+  <h1>Watch List</h1>
+</div>
 
-<ul>
+<div class="lists-container">
   <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-    </li>
+    <div class="list-item">
+      <%= link_to list.name, list_path(list), class: "list-link" %>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<%= link_to "Create a new list", new_list_path, class: "btn btn-primary" %>
+<div class="d-flex justify-content-center">
+<%= link_to "Create a new list", new_list_path, class: "btn btn-danger text-white rounded" %>
+</div>

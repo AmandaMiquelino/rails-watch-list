@@ -1,6 +1,13 @@
+/* app/assets/stylesheets/navbar.scss */
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(10, 10, 10);
+  display: flex;
+  -webkit-box-align: end;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  list-style: none outside;
 }
 
 .navbar-lewagon .navbar-collapse {

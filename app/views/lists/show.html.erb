@@ -1,25 +1,30 @@
-<%# <h1><%= @list.name %>
+<h1><%= @list.name %></h1>
+<div class="row my-2">
+  <% @list.movies.each_with_index do |movie, index| %>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
 
-<%# <%= link_to "Back to list", lists_path, class: "btn btn-secondary" %>
+    <div class="col-md-4 mb-3 p-3">
+      <div class="movie-card p-3">
+        <h3><%= movie.title %></h3>
 
-    <h1><%= @list.name %></h1>
-  <div class="row my-2">
-    <% @list.movies.each do |movie| %>
-      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
-            <small class="text-muted"><%= movie.overview %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <div>
-                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= bookmark.comment %></small>
-              </div>
-              <small class="text-right flex-shrink-0"><%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
-            </div>
-          </div>
-        </div>
+       <% if movie.poster.attached? %>
+        <%= image_tag movie.poster, alt: movie.title, class: "img-fluid rounded" %>
+      <% else %>
+        <p>No poster available</p>
+      <% end %>
+      
+        <%= form_with model: bookmark, method: :delete, url: list_bookmark_path(@list, bookmark), local: true do |form| %>
+          <%= form.submit "Delete", class: "btn btn-danger text-white rounded" %>
+        <% end %>
       </div>
+    </div>
+
+    <% if (index + 1) % 3 == 0 %>
+      </div><div class="row my-2">
     <% end %>
-  
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= link_to "Back", lists_path, class: "btn btn-secondary rounded" %>
+</div>

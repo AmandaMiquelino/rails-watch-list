@@ -23,6 +23,9 @@ module RailsWatchList
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
+    config.active_storage.routes_prefix = '/rails/active_storage'
+    config.active_storage.service = :cloudinary
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.

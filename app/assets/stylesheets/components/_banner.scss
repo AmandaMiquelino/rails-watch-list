@@ -1,0 +1,37 @@
+.banner {
+  background-image: url('https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.banner-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.banner h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  margin-top: 15px;
+  background-color: #ff6600;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
