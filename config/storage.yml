@@ -8,10 +8,9 @@ local:
 
 cloudinary:
   service: Cloudinary
-  cloud_name: '<Yde5nm2kmz>'
-  api_key: '<144732634239742>'
-  api_secret: '<kgEIbdE0Fg1kwJa5INcsa3hPS1I>'
-  folder: 'your_folder'  # opcional, para organizar suas imagens no Cloudinary
+  cloud_name: 'Yde5nm2kmz'
+  api_key: '144732634239742'
+  api_secret: 'kgEIbdE0Fg1kwJa5INcsa3hPS1I'
 
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)

@@ -19,6 +19,8 @@ Rails.application.configure do
 
    config.active_storage.routes_prefix = '/rails/active_storage'
 
+   config.active_storage.service = :cloudinary
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
